@@ -52,28 +52,21 @@ li {
 }
 
 .header ul {
-    list-style: none;
-    background-color: royalblue;
-    width: 100%;
-    overflow: hidden;
     display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    background: deepskyblue;
 }
 
-.header li {
-    display: inline;
-    float: left;
-    color: white
-}
-
-.header li a {
-    display: inline-block;
-    /* background-color: aqua; */
-    padding: 14px 16px;
-    color: black
+.header a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
 }
 
 .header a:hover {
-    background-color: skyblue;
+    background: blue;
 }
 
 .mainBody {}
