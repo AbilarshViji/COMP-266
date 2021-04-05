@@ -1,0 +1,85 @@
+body {
+    background-color: powderblue;
+}
+
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h2 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+table {}
+
+tbody {}
+
+th {}
+
+tr {}
+
+td {}
+
+iframe {}
+
+figure {}
+
+img {}
+
+a {
+    color: blue;
+}
+
+figcaption {
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: italic;
+}
+
+ul {}
+
+ol {}
+
+li {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header ul {
+    list-style: none;
+    background-color: royalblue;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.header li {
+    display: inline;
+    float: left;
+    color: white
+}
+
+.header li a {
+    display: inline-block;
+    /* background-color: aqua; */
+    padding: 14px 16px;
+    color: black
+}
+
+.header a:hover {
+    background-color: skyblue;
+}
+
+.mainBody {}
+
+.partsList table {
+    display: grid
+}
+
+.link {}
