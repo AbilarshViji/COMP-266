@@ -18,7 +18,9 @@ p {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-table {}
+table {
+    font-family: Helvetica, Arial, sans-serif;
+}
 
 tbody {}
 
@@ -28,11 +30,17 @@ tr {}
 
 td {}
 
-iframe {}
+iframe {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16/9;
+}
 
 figure {}
 
-img {}
+img {
+    width: 100%;
+}
 
 a {
     color: blue;
@@ -50,6 +58,14 @@ ol {}
 li {
     font-family: Helvetica, Arial, sans-serif;
 }
+
+form {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+input {}
+
+label {}
 
 .header ul {
     display: flex;
@@ -69,10 +85,32 @@ li {
     background: blue;
 }
 
-.mainBody {}
-
-.partsList table {
-    display: grid
+@media all and (max-width: 500px) {
+    .header ul {
+        flex-direction: column;
+    }
 }
 
-.link {}
+.mainBody {}
+
+.partsList ul {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0%;
+    list-style: none;
+    height: 100%;
+}
+
+.partsList li {
+    width: 32%;
+}
+
+.partsList a {
+    text-align: center;
+}
+
+#link {
+    /* ID used instead of class */
+    color: blue;
+    font-style: italic;
+}
