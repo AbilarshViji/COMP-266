@@ -22,29 +22,24 @@ table {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-tbody {}
-
-th {}
-
-tr {}
-
 td {
     border-left: 2px solid black;
 }
 
 iframe {
+    /* Set YouTube videos to fit page */
     width: 100%;
     max-width: 600px;
     aspect-ratio: 16/9;
 }
 
-figure {}
-
 img {
+    /* Get rid of horizontal scroll bars for images */
     width: 100%;
 }
 
 a {
+    /* Links don't turn purple now */
     color: blue;
 }
 
@@ -53,21 +48,22 @@ figcaption {
     font-style: italic;
 }
 
-ul {}
-
-ol {}
-
 li {
     font-family: Helvetica, Arial, sans-serif;
 }
 
 form {
     font-family: Helvetica, Arial, sans-serif;
+    padding: 5px;
 }
 
-input {}
+input {
+    padding: 5px;
+    margin: 5px 0;
+}
 
-label {}
+
+/* Format nav bar */
 
 .header ul {
     display: flex;
@@ -88,6 +84,9 @@ label {}
     transition: background 1.5s;
 }
 
+
+/* Mobile nav bar will be a column for better usability */
+
 @media all and (max-width: 500px) {
     .header ul {
         flex-direction: column;
@@ -100,23 +99,26 @@ label {}
     }
 }
 
-.mainBody {}
+.mainBody {
+    padding: 0 5%;
+}
 
 .partsList ul {
     display: flex;
     flex-flow: row wrap;
     padding: 0%;
     list-style: none;
-    /* height: 100%; */
     justify-content: center;
 }
 
 .partsList li {
+    /* Ensure 3 wide for grid */
     width: 32%;
     padding: 0%;
 }
 
-.partsList a {}
+
+/* Mobile parts grid so pictures are more visible on mobile */
 
 @media all and (max-width: 500px) {
     .partsList figcaption {
