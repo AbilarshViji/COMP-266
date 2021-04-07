@@ -2,3 +2,5 @@ General CSS Guide - https://www.freecodecamp.org/news/the-css-handbook-a-handy-g
 Nav bar - https://www.w3schools.com/css/css_navbar_horizontal.asp
 flexbox - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 CSS documentation - https://developer.mozilla.org/en-US/docs/Web/CSS
+Transitions - https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+Shadows - https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
