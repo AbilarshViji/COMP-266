@@ -110,7 +110,7 @@ input {
 }
 
 @media screen and (min-width: 800px) {
-    .header:hover .partsDropdown {
+    .header li:hover .partsDropdown {
         display: block;
     }
 }
