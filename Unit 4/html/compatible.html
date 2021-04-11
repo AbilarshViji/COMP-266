@@ -1,0 +1,108 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Compatibility Guides</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Abilarsh">
+    <meta name="modified-date" content="04/09/2021">
+    <link rel="stylesheet" href="../css/main.css">
+
+
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <li>
+                <a href="home.html">Home Page</a>
+            </li>
+            <li>
+                <a href="whatToUsePCFor.html">What can a gaming PC do</a>
+            </li>
+            <li>
+                <a class="dropdown" href="partsHome.html">Parts of a PC</a>
+                <div class="partsDropdown">
+                    <a href="parts/cpu.html">CPU</a>
+                    <a href="parts/cpuCooler.html">CPU Cooler</a>
+                    <a href="parts/motherboard.html">Motherboard</a>
+                    <a href="parts/ram.html">RAM</a>
+                    <a href="parts/storage.html">Storage</a>
+                    <a href="parts/gpu.html">GPU</a>
+                    <a href="parts/case.html">Case</a>
+                    <a href="parts/psu.html">PSU</a>
+                    <a href="parts/monitor.html">Monitor</a>
+                </div>
+            </li>
+            <li>
+                <a href="compatible.html">Parts compatibility</a>
+            </li>
+            <li>
+                <a href="sampleBuilds.html">Sample Builds</a>
+            </li>
+            <li>
+                <a href="buildGuide.html">Build Guides</a>
+            </li>
+            <li>
+                <a href="troubleshootGuide.html">Troubleshooting Guide</a>
+            </li>
+            <li>
+                <a href="upgradeGuide.html">Upgrade Guide</a>
+            </li>
+            <li>
+                <a href="contactUs.html">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+    <div class="mainBody">
+        <h1>Parts Compatibility</h1>
+
+        <p>This page will go through major compatibility issues that you may face when deciding on PC parts. In general, most parts that are available today are compatible, as standards for the various parts have not changed for over a decade. There are
+            details that would be good to know about each part, as explained on the <a href="partsHome.html"><span id="link">parts</span></a> page.</p>
+        <h2>CPU and Motherboard</h2>
+        <p>The CPU and motherboard is the biggest point of incompatibility you may face. Sockets on the motherboard can change fairly frequently, depending on the manufacturer</p>
+        <h3>Intel</h3>
+        <p>Intel motherboards follow the standard of ?### where ? represents a letter, and # represents a number. The letter represents the type and expected use-case of the motherboard. The first number represents the generation of the motherboard. Each
+            motherboard series is compatible across all CPUs released in that specific generation</p>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Motherboard Generation</th>
+                    <td>100 Series</td>
+                    <td>200 Series</td>
+                    <td>300 Series</td>
+                    <td>400 Series</td>
+                </tr>
+                <tr>
+                    <th>CPU Generation</th>
+                    <td>6000s</td>
+                    <td>7000s</td>
+                    <td>8000s</td>
+                    <td>10000s</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>AMD</h3>
+        <p>AMD is much simpler with their compatibility as they do not change their socket as often. Any Ryzen CPU is compatible with any B### or X### Motherboard. However, you may need a BIOS update to use certain CPUs. A BIOS update can be as easy as getting
+            a USB with the BIOS file from the manufacturers website and plugging it into a specific port.</p>
+        <h2>CPU Cooler</h2>
+        <p>Most CPU coolers contain brackets for both Intel and AMD motherboards. Typically you just need to screw the cooler into the backplate of the motherboard. Some really big CPU coolers may interfere with taller sticks of RAM. Be sure to check the
+            heights of the CPU cooler and the RAM to ensure compatibility.</p>
+        <h2>RAM</h2>
+        <p>All systems for over the past 5 years use DDR4 RAM, so any kit of DDR4 ram will be compatible.</p>
+        <h2>Storage</h2>
+        <p>Any hard drive or SSD that you get today should be compatible with your motherboard. The only limitation you may face is the quantity of drives that connect to your motherboard or physically fit in your case. Typical 3.5" hard drive mounts are
+            becoming especially in modern cases, as they are typically not used as much today. </p>
+        <h2>GPU</h2>
+        <p>All GPUs today use PCIe connectors on your motherboard to connect to. All motherboards today, regardless of size will include as least one. Something to look out for is the amount of power that your graphics card will consume. Ensure that your
+            PSU will be able to support the card you get.</p>
+        <h2>Case</h2>
+        <p>Cases are mostly a personal preference, based on appearance. Just make sure that your motherboard will fix in your case. Bigger cases can hold smaller motherboards, but smaller cases cannot hold bigger motherboards.</p>
+        <h2>Power Supply (PSU)</h2>
+        <p>The connectors used on power supplies have not changed in a long time. Just make sure that your power supply can support all the components that you selected. Use the <a href="troubleshootGuide.html#powerSupplyCalculator"><span id="link">power supply calculator</span></a>            to ensure that the power supply has enough power.</p>
+    </div>
+</body>
+
+</html>

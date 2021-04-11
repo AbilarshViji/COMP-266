@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Troubleshooting Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Abilarsh">
+    <meta name="modified-date" content="04/09/2021">
+    <link rel="stylesheet" href="../css/main.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <li>
+                <a href="home.html">Home Page</a>
+            </li>
+            <li>
+                <a href="whatToUsePCFor.html">What can a gaming PC do</a>
+            </li>
+            <li>
+                <a class="dropdown" href="partsHome.html">Parts of a PC</a>
+                <div class="partsDropdown">
+                    <a href="parts/cpu.html">CPU</a>
+                    <a href="parts/cpuCooler.html">CPU Cooler</a>
+                    <a href="parts/motherboard.html">Motherboard</a>
+                    <a href="parts/ram.html">RAM</a>
+                    <a href="parts/storage.html">Storage</a>
+                    <a href="parts/gpu.html">GPU</a>
+                    <a href="parts/case.html">Case</a>
+                    <a href="parts/psu.html">PSU</a>
+                    <a href="parts/monitor.html">Monitor</a>
+                </div>
+            </li>
+            <li>
+                <a href="compatible.html">Parts compatibility</a>
+            </li>
+            <li>
+                <a href="sampleBuilds.html">Sample Builds</a>
+            </li>
+            <li>
+                <a href="buildGuide.html">Build Guides</a>
+            </li>
+            <li>
+                <a href="troubleshootGuide.html">Troubleshooting Guide</a>
+            </li>
+            <li>
+                <a href="upgradeGuide.html">Upgrade Guide</a>
+            </li>
+            <li>
+                <a href="contactUs.html">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mainBody">
+        <h1>Troubleshooting Guide</h1>
+        <p>So your PC doesn't work. Here's some quick things you can check before determining if a part is dead.</p>
+        <h2>Check the PSU is on</h2>
+        <p>Ensure that the PSU switch is on. On is I, and off is O.</p>
+        <h2>Check your power connections</h2>
+        <p>It is possible that one of your connections may be loose. Double check that all your power connectors are seated correctly. </p>
+        <h2>Check that the RAM is properly seated</h2>
+        <p>The RAM should click in. Check that all the RAM sticks are level to each other. If one is slightly higher then the others, then it is not seated properly. Try either pushing on it, or removing and reinstalling it.</p>
+        <h2>Power supply underrated</h2>
+        <p>It is possible that you picked a power supply that cannot supply enough power for your system. Use the power supply calculator below to see if your power supply is sufficient</p>
+
+        <div class="psuCalc">
+            <h2>Power Supply Calculator</h2>
+            <h3>CPU</h3>
+            <select id="cpu">
+            <option value="i3">Intel Core i3</option>
+            <option value="i5">Intel Core i5</option>
+            <option value="i7">Intel Core i7</option>
+            <option value="i9">Intel Core i9</option>
+            <option value="r3">AMD Ryzen 3</option>
+            <option value="r5">AMD Ryzen 5</option>
+            <option value="r7">AMD Ryzen 7</option>
+            <option value="r9">AMD Ryzen 9</option>
+          </select>
+            <h3>GPU</h3>
+            <select id='gpu'>
+            <option value="3060">NVIDIA RTX 3060</option>
+            <option value="3060ti">NVIDIA RTX 3060 Ti</option>
+            <option value="3070">NVIDIA RTX 3070</option>
+            <option value="3080">NVIDIA RTX 3080</option>
+            <option value="3090">NVIDIA RTX 3090</option>
+            <option value="6700">AMD Radeon 6700 XT</option>
+            <option value="6800">AMD Radeon 6800</option>
+            <option value="6800xt">AMD Radeon 6800 XT</option>
+            <option value="6900">AMD Radeon 6900 XT</option>
+          </select>
+            <h3>RAM</h3>
+            <select id='ram'>
+            <option value="8">8GB</option>
+            <option value="16">16GB</option>
+            <option value="32">32GB</option>
+          </select>
+            <h3>Storage</h3>
+            <select id='storage'>
+            <option value="1">1 Device</option>
+            <option value="2">2 Device</option>
+            <option value="3">3 Device</option>
+            <option value="4">4 Device</option>
+          </select>
+            <h3>Power Needed</h3>
+            <!--Need output, will determine whats best in JS section-->
+            <h3>Common PC Issues</h3>
+            <iframe src="https://www.youtube-nocookie.com/embed/-plesrt8ZCs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+
+</html>

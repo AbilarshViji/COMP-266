@@ -1,0 +1,160 @@
+body {
+    background-color: powderblue;
+}
+
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h2 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+table {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+td {
+    border-left: 2px solid black;
+}
+
+iframe {
+    /* Set YouTube videos to fit page */
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16/9;
+}
+
+img {
+    /* Get rid of horizontal scroll bars for images */
+    width: 100%;
+}
+
+a {
+    /* Links don't turn purple now */
+    color: blue;
+}
+
+figcaption {
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: italic;
+}
+
+li {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+form {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 5px;
+}
+
+input {
+    padding: 5px;
+    margin: 5px 0;
+}
+
+
+/* Format nav bar */
+
+.header ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    background: deepskyblue;
+}
+
+.header a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+}
+
+.header a:hover {
+    background: blue;
+    transition: background 1.5s;
+}
+
+
+/* Mobile nav bar will be a column for better usability */
+
+@media all and (max-width: 500px) {
+    .header ul {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    .header li {
+        text-align: center;
+    }
+}
+
+
+/* Dropdown only exists on desktop */
+
+.partsDropdown {
+    display: none;
+    position: absolute;
+    background-color: deepskyblue;
+    width: 127.16px;
+}
+
+@media screen and (min-width: 800px) {
+    .header li:hover .partsDropdown {
+        display: block;
+    }
+}
+
+.mainBody {
+    padding: 0 5%;
+}
+
+.partsList ul {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0%;
+    list-style: none;
+    justify-content: center;
+}
+
+.partsList li {
+    /* Ensure 3 wide for grid */
+    width: 32%;
+    padding: 0%;
+}
+
+
+/* Mobile parts grid so pictures are more visible on mobile */
+
+@media all and (max-width: 500px) {
+    .partsList figcaption {
+        font-size: 8px;
+    }
+    .partsList figure {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 5px;
+        margin-inline-end: 5px;
+    }
+}
+
+#link {
+    /* ID used instead of class */
+    color: blue;
+    font-style: italic;
+}
+
+#link:hover {
+    text-shadow: orange 0 0 3px;
+    transition: text-shadow 1s;
+}
