@@ -59,7 +59,7 @@
     <div class="mainBody">
         <h1>Troubleshooting Guide</h1>
         <p>So your PC doesn't work. Here's some quick things you can check before determining if a part is dead.</p>
-        <h2>Check the PSU is on</h2>
+        <h2>Check if the PSU is on</h2>
         <p>Ensure that the PSU switch is on. On is I, and off is O.</p>
         <h2>Check your power connections</h2>
         <p>It is possible that one of your connections may be loose. Double check that all your power connectors are seated correctly. </p>
@@ -111,7 +111,25 @@
             <h3>Common PC Issues</h3>
             <iframe src="https://www.youtube-nocookie.com/embed/-plesrt8ZCs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+        <!-- Taken from https://www.w3schools.com/howto/howto_js_todolist.asp -->
+        <div class="wholeList">
+            <div id="toDoListHeader" class="toDoListHeader">
+                <h2 style="margin:5px">Troubleshooting Guide</h2>
+                <input type="text" id="myInput" placeholder="Additional steps...">
+                <span onclick="newElement()" class="addBtn">Add</span>
+            </div>
+            <div class="toDoList">
+                <ul class="toDoList" id="toDoList">
+                    <li>Is the PSU on</li>
+                    <li>Are all the power connections secure</li>
+                    <li>Is the RAM seated properly</li>
+                    <li>Is your power supply properly rated</li>
+                </ul>
+            </div>
+        </div>
+        <!-- End of https://www.w3schools.com/howto/howto_js_todolist.asp -->
     </div>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
