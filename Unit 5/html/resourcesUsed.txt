@@ -1,1 +1,6 @@
-To Do List - https://www.w3schools.com/howto/howto_js_todolist.asp
+Javascript forms - https://www.infoworld.com/article/2077176/using-javascript-and-forms.html?page=2
+JS Dictionary - https://pietschsoft.com/post/2015/09/05/javascript-basics-how-to-create-a-dictionary-with-keyvalue-pairs
+Modify HTML with JS - https://www.w3schools.com/js/js_htmldom_html.asp
+Prevent form from refreshing page and moving page to top - https://stackoverflow.com/questions/19454310/stop-form-refreshing-page-on-submit
+Number verification = https://www.geeksforgeeks.org/javascript-number-isinteger-function
+Slideshow - https://www.w3schools.com/howto/howto_js_slideshow.asp
