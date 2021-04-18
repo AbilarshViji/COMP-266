@@ -4,3 +4,6 @@ Modify HTML with JS - https://www.w3schools.com/js/js_htmldom_html.asp
 Prevent form from refreshing page and moving page to top - https://stackoverflow.com/questions/19454310/stop-form-refreshing-page-on-submit
 Number verification = https://www.geeksforgeeks.org/javascript-number-isinteger-function
 Slideshow - https://www.w3schools.com/howto/howto_js_slideshow.asp
+Cookies - https://stackoverflow.com/questions/5671451/creating-a-javascript-cookie-on-a-domain-and-reading-it-across-sub-domains
+Onload - https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+Onload specific page - https://stackoverflow.com/questions/42230792/execute-a-function-on-specific-page-loaded

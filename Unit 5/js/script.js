@@ -132,3 +132,49 @@ function changeImage(n) {
     if (slideIndex >= pictures.length) { slideIndex = 0; } else if (slideIndex < 0) { slideIndex = pictures.length - 1; } // Make sure the counter doesn't over or underflow
     pictures[slideIndex].style.display = 'block';
 }
+
+// Change the visibility of content on the webpage
+function visibility(state) {
+    var cookieName = "state";
+    var textContent = document.querySelector(".text");
+    var videoContent = document.querySelector('.video');
+    if (state == "text") {
+        document.cookie = cookieName + "=" + state;
+        textContent.style.display = 'block';
+        videoContent.style.display = 'none';
+    } else if (state == "video") {
+        document.cookie = cookieName + "=" + state;
+        textContent.style.display = 'none';
+        videoContent.style.display = 'block';
+    } else if (state == "both") {
+        document.cookie = cookieName + "=" + state;
+        textContent.style.display = 'block';
+        videoContent.style.display = 'block';
+    } else {
+        console.error("Unknown state")
+    }
+}
+
+// Get the current state from the stored cookie
+function getState(cookie) {
+    var cookieName = "state";
+    if (cookie == "") {
+        document.cookie = cookieName + "= video";
+    }
+    return document.cookie.slice(document.cookie.indexOf("=") + 1);
+}
+
+window.onload = (event) => {
+    if (window.location.href.includes('home.html')) {
+        slideshow();
+    }
+}
+
+// Run when HTML has been fully loaded, this was faster then using onload as the code only references HTML content, and does not need all content to be loaded
+window.addEventListener('DOMContentLoaded', (event) => {
+    visibility(getState(document.cookie));
+    if (window.location.href.includes('troubleshootGuide.html')) {
+        toDoListInit();
+    }
+
+});
