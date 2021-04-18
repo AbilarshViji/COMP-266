@@ -158,10 +158,10 @@ function visibility(state) {
 // Get the current state from the stored cookie
 function getState(cookie) {
     var cookieName = "state";
-    if (cookie == "") {
-        document.cookie = cookieName + "= video";
+    if (cookie.indexOf("state=") == -1) {
+        document.cookie = cookieName + "= both";
     }
-    return document.cookie.slice(document.cookie.indexOf("=") + 1);
+    return document.cookie.slice(document.cookie.indexOf("state=") + 6);
 }
 
 window.onload = (event) => {
@@ -176,5 +176,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (window.location.href.includes('troubleshootGuide.html')) {
         toDoListInit();
     }
-
 });
