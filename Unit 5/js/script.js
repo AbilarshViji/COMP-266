@@ -136,23 +136,29 @@ function changeImage(n) {
 // Change the visibility of content on the webpage
 function visibility(state) {
     var cookieName = "state";
-    var textContent = document.querySelector(".text");
-    var videoContent = document.querySelector('.video');
-    if (state == "text") {
-        document.cookie = cookieName + "=" + state;
-        textContent.style.display = 'block';
-        videoContent.style.display = 'none';
-    } else if (state == "video") {
-        document.cookie = cookieName + "=" + state;
-        textContent.style.display = 'none';
-        videoContent.style.display = 'block';
-    } else if (state == "both") {
-        document.cookie = cookieName + "=" + state;
-        textContent.style.display = 'block';
-        videoContent.style.display = 'block';
-    } else {
-        console.error("Unknown state")
+    try {
+        var textContent = document.querySelector(".text");
+        var videoContent = document.querySelector('.video');
+        if (state == "text") {
+            document.cookie = cookieName + "=" + state;
+            textContent.style.display = 'block';
+            videoContent.style.display = 'none';
+        } else if (state == "video") {
+            document.cookie = cookieName + "=" + state;
+            textContent.style.display = 'none';
+            videoContent.style.display = 'block';
+        } else if (state == "both") {
+            document.cookie = cookieName + "=" + state;
+            textContent.style.display = 'block';
+            videoContent.style.display = 'block';
+        } else {
+            console.error("Unknown state")
+        }
+    } catch (e) {
+        console.log("No content types on this page");
+        return;
     }
+
 }
 
 // Get the current state from the stored cookie
@@ -164,6 +170,7 @@ function getState(cookie) {
     return document.cookie.slice(document.cookie.indexOf("state=") + 6);
 }
 
+// Run when all content on page is loaded
 window.onload = (event) => {
     if (window.location.href.includes('home.html')) {
         slideshow();
