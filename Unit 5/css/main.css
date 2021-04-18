@@ -39,6 +39,12 @@ img {
     width: 100%;
 }
 
+.text img {
+    /* Make images on part pages a more reasonable size */
+    width: 100%;
+    max-height: 500px;
+}
+
 a {
     /* Links don't turn purple now */
     color: blue;
@@ -174,6 +180,10 @@ input {
     padding: 10px;
     display: inline-block;
     text-align: right;
+}
+
+.pageState {
+    padding: 10px 0px;
 }
 
 

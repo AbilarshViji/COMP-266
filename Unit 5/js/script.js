@@ -140,15 +140,15 @@ function visibility(state) {
         var textContent = document.querySelector(".text");
         var videoContent = document.querySelector('.video');
         if (state == "text") {
-            document.cookie = cookieName + "=" + state;
+            document.cookie = cookieName + "=" + state + ";path=/";
             textContent.style.display = 'block';
             videoContent.style.display = 'none';
         } else if (state == "video") {
-            document.cookie = cookieName + "=" + state;
+            document.cookie = cookieName + "=" + state + ";path=/";
             textContent.style.display = 'none';
             videoContent.style.display = 'block';
         } else if (state == "both") {
-            document.cookie = cookieName + "=" + state;
+            document.cookie = cookieName + "=" + state + ";path=/";
             textContent.style.display = 'block';
             videoContent.style.display = 'block';
         } else {
@@ -165,7 +165,7 @@ function visibility(state) {
 function getState(cookie) {
     var cookieName = "state";
     if (cookie.indexOf("state=") == -1) {
-        document.cookie = cookieName + "= both";
+        document.cookie = cookieName + "= both;path=/";
     }
     return document.cookie.slice(document.cookie.indexOf("state=") + 6);
 }
