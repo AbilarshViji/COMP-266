@@ -7,3 +7,5 @@ Slideshow - https://www.w3schools.com/howto/howto_js_slideshow.asp
 Cookies - https://stackoverflow.com/questions/5671451/creating-a-javascript-cookie-on-a-domain-and-reading-it-across-sub-domains
 Onload - https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
 Onload specific page - https://stackoverflow.com/questions/42230792/execute-a-function-on-specific-page-loaded
+Regex - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+Regex tester - https://regex101.com/

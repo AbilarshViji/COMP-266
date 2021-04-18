@@ -84,9 +84,19 @@
                 </tr>
             </tbody>
         </table>
+        <h4>Intel CPU Name Tester</h4>
+        <input type="text" id="intelName">
+        <input type="submit" onclick="intelVerify()">
+        <p id="intelTest"></p>
+        <p>Examples that would work: 4770, 6700K, 10600K, 11900KF</p>
         <h3>AMD</h3>
         <p>AMD is much simpler with their compatibility as they do not change their socket as often. Any Ryzen CPU is compatible with any B### or X### Motherboard. However, you may need a BIOS update to use certain CPUs. A BIOS update can be as easy as getting
             a USB with the BIOS file from the manufacturers website and plugging it into a specific port.</p>
+        <h4>AMD CPU Name Tester</h4>
+        <input type="text" id="amdName">
+        <input type="submit" onclick="amdVerify()">
+        <p id="amdTest"></p>
+        <p>Examples that would work: 1600X, 3500G, 5600</p>
         <h2>CPU Cooler</h2>
         <p>Most CPU coolers contain brackets for both Intel and AMD motherboards. Typically you just need to screw the cooler into the backplate of the motherboard. Some really big CPU coolers may interfere with taller sticks of RAM. Be sure to check the
             heights of the CPU cooler and the RAM to ensure compatibility.</p>
@@ -103,6 +113,7 @@
         <h2>Power Supply (PSU)</h2>
         <p>The connectors used on power supplies have not changed in a long time. Just make sure that your power supply can support all the components that you selected. Use the <a href="troubleshootGuide.html#powerSupplyCalculator"><span id="link">power supply calculator</span></a>            to ensure that the power supply has enough power.</p>
     </div>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

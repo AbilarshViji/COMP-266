@@ -170,6 +170,30 @@ function getState(cookie) {
     return document.cookie.slice(document.cookie.indexOf("state=") + 6);
 }
 
+function amdVerify() {
+    const regex = /[1-5]\d0{2}[XG]?/gm;
+    var stringTest = document.getElementById('amdName').value;
+    if (stringTest.match(regex) == null) {
+        // Invalid
+        document.getElementById("amdTest").innerHTML = stringTest + " is not valid";
+    } else {
+        // Valid
+        document.getElementById("amdTest").innerHTML = stringTest + " is valid";
+    }
+}
+
+function intelVerify() {
+    const regex = /[1-9]\d{2,3}[0][KF]?[F]?/gm;
+    var stringTest = document.getElementById('intelName').value;
+    if (stringTest.match(regex) == null) {
+        // Invalid
+        document.getElementById("intelTest").innerHTML = stringTest + " is not valid";
+    } else {
+        // Valid
+        document.getElementById("intelTest").innerHTML = stringTest + " is valid";
+    }
+}
+
 // Run when all content on page is loaded
 window.onload = (event) => {
     if (window.location.href.includes('home.html')) {
