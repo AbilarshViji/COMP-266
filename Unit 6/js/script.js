@@ -208,3 +208,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         toDoListInit();
     }
 });
+
+// This code is blocked locally due to CORS, works when using http.server
+// This functions load in the constant header file which is used across all pages
+$(function() {
+    if (window.location.href.includes('/parts/')) {
+        $("#header").load("../parts/header.html");
+    } else {
+        $("#header").load("../html/header.html");
+    }
+});
