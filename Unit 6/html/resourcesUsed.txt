@@ -1,1 +1,3 @@
-https://www.freecodecamp.org/news/the-best-jquery-examples/
+General JQuery - https://www.freecodecamp.org/news/the-best-jquery-examples/
+Click - https://api.jquery.com/click/
+JQuery Examples - http://youmightnotneedjquery.com/

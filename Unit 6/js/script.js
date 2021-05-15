@@ -134,23 +134,23 @@ function changeImage(n) {
 }
 
 // Change the visibility of content on the webpage
-function visibility(state) {
+function visibility(state, speed) {
     var cookieName = "state";
     try {
         var textContent = $(".text");
         var videoContent = $('.video');
         if (state == "text") {
             document.cookie = cookieName + "=" + state + ";path=/";
-            textContent.show("slow");
-            videoContent.hide("slow");
+            textContent.show(speed);
+            videoContent.hide(speed);
         } else if (state == "video") {
             document.cookie = cookieName + "=" + state + ";path=/";
-            textContent.hide("slow");
-            videoContent.show("slow");
+            textContent.hide(speed);
+            videoContent.show(speed);
         } else if (state == "both") {
             document.cookie = cookieName + "=" + state + ";path=/";
-            textContent.show("slow");
-            videoContent.show("slow");
+            textContent.show(speed);
+            videoContent.show(speed);
         } else {
             console.error("Unknown state")
         }
@@ -203,7 +203,7 @@ window.onload = (event) => {
 
 // Run when HTML has been fully loaded, this was faster then using onload as the code only references HTML content, and does not need all content to be loaded
 window.addEventListener('DOMContentLoaded', (event) => {
-    visibility(getState(document.cookie));
+    visibility(getState(document.cookie), 0);
     if (window.location.href.includes('troubleshootGuide.html')) {
         toDoListInit();
     }
