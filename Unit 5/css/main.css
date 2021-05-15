@@ -45,7 +45,7 @@ img {
 
 .text img {
     /* Make images on part pages a more reasonable size */
-    width: 100%;
+    width: auto;
     max-height: 500px;
 }
 
