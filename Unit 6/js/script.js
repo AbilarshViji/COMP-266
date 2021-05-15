@@ -137,20 +137,20 @@ function changeImage(n) {
 function visibility(state) {
     var cookieName = "state";
     try {
-        var textContent = document.querySelector(".text");
-        var videoContent = document.querySelector('.video');
+        var textContent = $(".text");
+        var videoContent = $('.video');
         if (state == "text") {
             document.cookie = cookieName + "=" + state + ";path=/";
-            textContent.style.display = 'block';
-            videoContent.style.display = 'none';
+            textContent.show("slow");
+            videoContent.hide("slow");
         } else if (state == "video") {
             document.cookie = cookieName + "=" + state + ";path=/";
-            textContent.style.display = 'none';
-            videoContent.style.display = 'block';
+            textContent.hide("slow");
+            videoContent.show("slow");
         } else if (state == "both") {
             document.cookie = cookieName + "=" + state + ";path=/";
-            textContent.style.display = 'block';
-            videoContent.style.display = 'block';
+            textContent.show("slow");
+            videoContent.show("slow");
         } else {
             console.error("Unknown state")
         }
