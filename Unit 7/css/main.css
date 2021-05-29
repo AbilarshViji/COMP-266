@@ -1,0 +1,336 @@
+body {
+    background-color: powderblue;
+}
+
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    display: inline-block;
+}
+
+h2 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h4 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+table {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+td {
+    border-left: 2px solid black;
+}
+
+iframe {
+    /* Set YouTube videos to fit page */
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16/9;
+}
+
+img {
+    /* Get rid of horizontal scroll bars for images */
+    width: 100%;
+}
+
+.text img {
+    /* Make images on part pages a more reasonable size */
+    width: auto;
+    max-height: 500px;
+}
+
+a {
+    /* Links don't turn purple now */
+    color: blue;
+}
+
+figcaption {
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: italic;
+}
+
+li {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+form {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 5px;
+}
+
+input {
+    padding: 5px;
+    margin: 5px 0;
+}
+
+
+/* Format nav bar */
+
+.header ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    background: deepskyblue;
+}
+
+.header a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+}
+
+.header a:hover {
+    background: blue;
+    transition: background 1.5s;
+}
+
+
+/* Mobile nav bar will be a column for better usability */
+
+@media all and (max-width: 500px) {
+    .header ul {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    .header li {
+        text-align: center;
+    }
+}
+
+
+/* Dropdown only exists on desktop */
+
+.partsDropdown {
+    display: none;
+    position: absolute;
+    background-color: deepskyblue;
+    width: 127.16px;
+}
+
+@media screen and (min-width: 800px) {
+    .header li:hover .partsDropdown {
+        display: block;
+    }
+}
+
+.mainBody {
+    padding: 0 5%;
+}
+
+.partsList ul {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0%;
+    list-style: none;
+    justify-content: center;
+}
+
+.partsList li {
+    /* Ensure 3 wide for grid */
+    width: 32%;
+    padding: 0%;
+}
+
+
+/* Mobile parts grid so pictures are more visible on mobile */
+
+@media all and (max-width: 500px) {
+    .partsList figcaption {
+        font-size: 8px;
+    }
+    .partsList figure {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 5px;
+        margin-inline-end: 5px;
+    }
+}
+
+#link {
+    /* ID used instead of class */
+    color: blue;
+    font-style: italic;
+}
+
+#link:hover {
+    text-shadow: orange 0 0 3px;
+    transition: text-shadow 1s;
+}
+
+.slideshow {
+    display: none
+}
+
+
+/* Slideshow buttons */
+
+.imageChange {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+    text-align: right;
+}
+
+.pageState {
+    padding: 10px 0px;
+}
+
+
+/* Taken from https://www.w3schools.com/howto/howto_js_todolist.asp */
+
+.wholeList {
+    margin: 0;
+    min-width: 250px;
+}
+
+
+/* Remove margins and padding from the list */
+
+.toDoList ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Style the list items */
+
+.toDoList ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Set all odd list items to a different color (zebra-stripes) */
+
+.toDoList ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+
+/* Darker background-color on hover */
+
+.toDoList ul li:hover {
+    background: #ddd;
+}
+
+
+/* When clicked on, add a background color and strike out text */
+
+.toDoList ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+
+/* Add a "checked" mark when clicked on */
+
+.toDoList ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+
+/* Style the close button */
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+
+/* Style the header */
+
+.toDoListHeader {
+    background-color: blue;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+
+/* Clear floats after the header */
+
+.toDoListHeader:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Style the input */
+
+.toDoListHeader input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+/* Style the "Add" button */
+
+.addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
+}
+
+
+/* End of https://www.w3schools.com/howto/howto_js_todolist.asp */

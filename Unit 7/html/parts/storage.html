@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Abilarsh">
+    <meta name="modified-date" content="04/09/2021">
+    <link rel="stylesheet" href="../../css/main.css">
+
+</head>
+
+<body>
+    <div id="header">
+    </div>
+    <div class="pageState">
+        <button onclick="visibility('text', 'slow')">Text</button>
+        <button onclick="visibility('video', 'slow')">Video</button>
+        <button onclick="visibility('both', 'slow')">Both</button>
+    </div>
+    <div class=mainBody>
+        <h1>Storage</h1>
+        <div class="text">
+            <figure>
+                <img src="../../imgs/storage.jpg" alt="Storage">
+                <figcaption>Photo by <a href="https://unsplash.com/photos/SaiJ_n1TvCU">Frank R</a> on <a href="https://unsplash.com/license">Unsplash</a></figcaption>
+            </figure>
+            <p>Storage comes in 2 formats, SATA and M.2. SATA drives are 2.5" SSDs and 3.5" hard drives. They go into specific slots in your case to mount. They require a SATA power connector from the PSU, and a SATA data connector which connects the motherboard
+                to the drive. SATA is a slower protocol, so the drives are limited in the speeds they can achieve.<br><br>M.2 drives connect directly to the motherboard. There is a slot which the drive connects to. There are no separate connectors required.
+                M.2 drives support a protocol called NVMe. NVMe uses PCIe for the drive connection protocol instead of SATA. This allows for much faster speeds on the drive.</p>
+        </div>
+        <div class="video">
+            <h2>Hard drives vs SSDs</h2>
+            <iframe src="https://www.youtube-nocookie.com/embed/YQEjGKYXjw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>
