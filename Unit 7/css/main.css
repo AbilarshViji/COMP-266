@@ -170,8 +170,32 @@ input {
     transition: text-shadow 1s;
 }
 
-.slideshow {
-    display: none
+#slideshow {
+    /* display: flexbox; */
+    float: left;
+    width: 60%;
+}
+
+#news {
+    font-family: Helvetica, Arial, sans-serif;
+    float: right;
+    /* display: flexbox; */
+    width: 40%;
+}
+
+
+/* Have content top bottom on mobile instead of side by side */
+
+@media all and (max-width: 500px) {
+    #slideshow {
+        display: block;
+        width: 100%;
+    }
+    #news {
+        font-family: Helvetica, Arial, sans-serif;
+        display: block;
+        width: 100%;
+    }
 }
 
 

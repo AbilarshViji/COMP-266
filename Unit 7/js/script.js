@@ -194,10 +194,36 @@ function intelVerify() {
     }
 }
 
+async function getNews() {
+    const apiKey = '2d27495d3956eaadc705190ace64562c'
+    const query = 'computer'
+    const lang = 'en'
+    var url = "https://gnews.io/api/v4/search?q=" + query + "&lang=" + lang + "&token=" + apiKey
+    var news = ""
+        // var request = new XMLHttpRequest();
+        // request.open("GET", url)
+        // request.send()
+    var response = fetch(url)
+        .then(res => res.json())
+        .then(json => {
+            for (i = 0; i < json.articles.length; i++) {
+                var item = json.articles[i].title + "<br><br>"
+                var result = item.link(json.articles[i].url)
+                document.getElementById('news').innerHTML += result
+                    // console.log(json.articles[i])
+            }
+            // console.log(json.articles)
+        })
+        .catch(error => console.log(error))
+        // var jsonNews = await response.json()
+        // return jsonNews
+}
+
 // Run when all content on page is loaded
 window.onload = (event) => {
     if (window.location.href.includes('home.html')) {
         slideshow();
+        getNews();
     }
 }
 

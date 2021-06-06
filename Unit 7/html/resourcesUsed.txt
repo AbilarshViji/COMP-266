@@ -1,0 +1,3 @@
+async fetch - https://www.xul.fr/en/html5/fetch.php
+create link https://www.w3schools.com/jsref/jsref_link.asp
+https://www.w3schools.com/xml/ajax_intro.asp
