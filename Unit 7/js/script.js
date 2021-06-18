@@ -200,9 +200,6 @@ async function getNews() {
     const lang = 'en'
     var url = "https://gnews.io/api/v4/search?q=" + query + "&lang=" + lang + "&token=" + apiKey
     var news = ""
-        // var request = new XMLHttpRequest();
-        // request.open("GET", url)
-        // request.send()
     var response = fetch(url)
         .then(res => res.json())
         .then(json => {
@@ -210,14 +207,95 @@ async function getNews() {
                 var item = json.articles[i].title + "<br><br>"
                 var result = item.link(json.articles[i].url)
                 document.getElementById('news').innerHTML += result
-                    // console.log(json.articles[i])
             }
-            // console.log(json.articles)
         })
         .catch(error => console.log(error))
-        // var jsonNews = await response.json()
-        // return jsonNews
 }
+
+function getIP() {
+    var url = "https://api64.ipify.org"
+    var request = new XMLHttpRequest();
+    request.open("GET", url, false);
+    request.send();
+    if (request.status == 200) {
+        return request.responseText
+    } else {
+        return "No IP" //IP may not be retrived if with certain adblocks
+    }
+}
+
+// function getMap() {
+//     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=computer&location=42.3675294,-71.186966&radius=10000&key=AIzaSyC-gLWbrw1LChndJ9uxNg2dn-jdn2KlqEc"
+//     var request = new XMLHttpRequest();
+//     request.open("GET", url, false);
+//     request.send();
+//     if (request.status == 200) {
+//         return request.responseText
+//     } else {
+//         return "No IP" //IP may not be retrived if with certain adblocks
+//     }
+// }
+
+function getCoords(ip) {
+    var url = "http://ip-api.com/json/" + ip
+    var request = new XMLHttpRequest();
+    if (ip == "No IP") {
+        return { 'lat': 43.5890, 'lon': 79.6441 } //return Mississauga if IP cannot be detected
+    } else {
+        request.open("GET", url, false);
+        request.send();
+        var json = JSON.parse(request.responseText)
+        return { 'lat': json.lat, 'lon': json.lon }
+    }
+}
+//maps.googleapis.com/maps/api/place/textsearch/json?query=computer&location=42.3675294,-71.186966&radius=10000&key=AIzaSyC-gLWbrw1LChndJ9uxNg2dn-jdn2KlqEc
+// function displayMap() {
+//     var coords = getCoords(getIP())
+//     var apiKey = "AIzaSyC-gLWbrw1LChndJ9uxNg2dn-jdn2KlqEc"
+//     var query = "computer"
+//     var location = coords['lat'] + ',' + coords['lon'];
+//     var radius = "10000";
+//     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&location=" + location + "&radius=" + radius + "&key=" + apiKey
+//     var news = ""
+//     var response = fetch(url)
+//         .then(res => res.json())
+//         .then(json => {
+//             console.log(json['results'])
+//         })
+//         .catch(error => console.log(error))
+// }
+
+var map;
+var service;
+var infowindow;
+
+function initialize() {
+    var coords = getCoords(getIP())
+    var location = new google.maps.LatLng(coords['lat'], coords['lon']);
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: location,
+        zoom: 15
+    });
+
+    var request = {
+        location: location,
+        radius: '500',
+        keyword: 'computer'
+    };
+
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+}
+
+function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+        }
+    }
+}
+
 
 // Run when all content on page is loaded
 window.onload = (event) => {
