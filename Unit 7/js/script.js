@@ -99,7 +99,9 @@ function psuCalculator() {
     storage = form.storage.value;
     custom = form.custom.value;
     if (custom == "" || Number.isInteger(parseInt(custom)) && parseInt(custom) >= 0) { // Verify that custom value is a positive integer or blank
-        power = cpuPower[cpu] + gpuPower[gpu] + ramPower[ram] + storagePower[storage] + parseInt(custom);
+        var customInt = parseInt(custom);
+        if (isNaN(customInt)) { customInt = 0 }
+        power = cpuPower[cpu] + gpuPower[gpu] + ramPower[ram] + storagePower[storage] + customInt;
         document.getElementById("powerNeeded").innerHTML = power + "W";
     } else { // Provide error message for invalid value
         document.getElementById("powerNeeded").innerHTML = "Please put a positive integer or leave custom component blank"
@@ -170,6 +172,7 @@ function getState(cookie) {
     return document.cookie.slice(document.cookie.indexOf("state=") + 6);
 }
 
+// Verify the amd input
 function amdVerify() {
     const regex = /[1-5]\d0{2}[XG]?/gm;
     var stringTest = document.getElementById('amdName').value;
@@ -182,6 +185,7 @@ function amdVerify() {
     }
 }
 
+// Verify the intel input
 function intelVerify() {
     const regex = /[1-9]\d{2,3}[0][KF]?[F]?/gm;
     var stringTest = document.getElementById('intelName').value;
@@ -194,6 +198,7 @@ function intelVerify() {
     }
 }
 
+// Get the news using the GNews APU
 async function getNews() {
     const apiKey = '2d27495d3956eaadc705190ace64562c'
     const query = 'computer'
@@ -201,17 +206,23 @@ async function getNews() {
     var url = "https://gnews.io/api/v4/search?q=" + query + "&lang=" + lang + "&token=" + apiKey
     var news = ""
     var response = fetch(url)
-        .then(res => res.json())
-        .then(json => {
+        .then(res => {
+            if (!res.ok) { // if status != 200 provide an error message
+                document.getElementById('news').innerHTML = "An error has occurred<br>" + res.status + " " + res.statusText + "<br> Please refresh the page"
+                return;
+            }
+            return res.json()
+        })
+        .then(json => { // Parse and display the news artivles
             for (i = 0; i < json.articles.length; i++) {
                 var item = json.articles[i].title + "<br><br>"
                 var result = item.link(json.articles[i].url)
                 document.getElementById('news').innerHTML += result
             }
         })
-        .catch(error => console.log(error))
 }
 
+// Get the IP address of the user
 function getIP() {
     var url = "https://api64.ipify.org"
     var request = new XMLHttpRequest();
@@ -224,18 +235,7 @@ function getIP() {
     }
 }
 
-// function getMap() {
-//     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=computer&location=42.3675294,-71.186966&radius=10000&key=AIzaSyC-gLWbrw1LChndJ9uxNg2dn-jdn2KlqEc"
-//     var request = new XMLHttpRequest();
-//     request.open("GET", url, false);
-//     request.send();
-//     if (request.status == 200) {
-//         return request.responseText
-//     } else {
-//         return "No IP" //IP may not be retrived if with certain adblocks
-//     }
-// }
-
+// Get the coordinates of the user
 function getCoords(ip) {
     var url = "http://ip-api.com/json/" + ip
     var request = new XMLHttpRequest();
@@ -248,39 +248,25 @@ function getCoords(ip) {
         return { 'lat': json.lat, 'lon': json.lon }
     }
 }
-//maps.googleapis.com/maps/api/place/textsearch/json?query=computer&location=42.3675294,-71.186966&radius=10000&key=AIzaSyC-gLWbrw1LChndJ9uxNg2dn-jdn2KlqEc
-// function displayMap() {
-//     var coords = getCoords(getIP())
-//     var apiKey = "AIzaSyC-gLWbrw1LChndJ9uxNg2dn-jdn2KlqEc"
-//     var query = "computer"
-//     var location = coords['lat'] + ',' + coords['lon'];
-//     var radius = "10000";
-//     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&location=" + location + "&radius=" + radius + "&key=" + apiKey
-//     var news = ""
-//     var response = fetch(url)
-//         .then(res => res.json())
-//         .then(json => {
-//             console.log(json['results'])
-//         })
-//         .catch(error => console.log(error))
-// }
 
+// --- Start of sample code provided through Google Documentation --
+// https://developers.google.com/maps/documentation/javascript/examples/place-search
 var map;
 var service;
-var infowindow;
 
-function initialize() {
+//Display the original map
+function displayMap() {
     var coords = getCoords(getIP())
     var location = new google.maps.LatLng(coords['lat'], coords['lon']);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: location,
-        zoom: 15
+        zoom: 12
     });
 
     var request = {
         location: location,
-        radius: '500',
+        radius: '5000',
         keyword: 'computer'
     };
 
@@ -288,6 +274,28 @@ function initialize() {
     service.nearbySearch(request, callback);
 }
 
+//Creates markers on the map, and give some information when the marker is clicked
+function createMarker(place) {
+    if (!place.geometry || !place.geometry.location) return;
+    const marker = new google.maps.Marker({
+        map,
+        position: place.geometry.location,
+    });
+    var url = "https://www.google.com/maps/place/?q=place_id:" + place.place_id
+    var description = "<h1><a href=" + url + " target='_blank'> " + place.name + "</a></h1>" + "<br>" + place.vicinity
+    const infowindow = new google.maps.InfoWindow({
+        content: description
+    });
+    google.maps.event.addListener(marker, "click", () => {
+        infowindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+        });
+    });
+}
+
+// Callback function to iterate through the search results and display them
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
@@ -295,6 +303,8 @@ function callback(results, status) {
         }
     }
 }
+
+// End of sample code from Google documentation
 
 
 // Run when all content on page is loaded
@@ -310,6 +320,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     visibility(getState(document.cookie), 0);
     if (window.location.href.includes('troubleshootGuide.html')) {
         toDoListInit();
+    }
+    if (window.location.href.includes('sampleBuilds.html')) {
+        displayMap();
     }
 });
 

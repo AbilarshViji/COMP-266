@@ -1,5 +1,6 @@
 async fetch - https://www.xul.fr/en/html5/fetch.php
 create link https://www.w3schools.com/jsref/jsref_link.asp
 get ip - https://ourcodeworld.com/articles/read/257/how-to-get-the-client-ip-address-with-javascript-only
-https://www.w3schools.com/xml/ajax_intro.asp
+AJAX intro - https://www.w3schools.com/xml/ajax_intro.asp
 Google Maps Documentation - https://developers.google.com/maps/documentation/javascript/places
+Info window since example was wrong - https://developers.google.com/maps/documentation/javascript/infowindows
