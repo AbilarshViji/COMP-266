@@ -99,7 +99,9 @@ function psuCalculator() {
     storage = form.storage.value;
     custom = form.custom.value;
     if (custom == "" || Number.isInteger(parseInt(custom)) && parseInt(custom) >= 0) { // Verify that custom value is a positive integer or blank
-        power = cpuPower[cpu] + gpuPower[gpu] + ramPower[ram] + storagePower[storage] + parseInt(custom);
+        var customInt = parseInt(custom);
+        if (isNaN(customInt)) { customInt = 0 }
+        power = cpuPower[cpu] + gpuPower[gpu] + ramPower[ram] + storagePower[storage] + customInt;
         document.getElementById("powerNeeded").innerHTML = power + "W";
     } else { // Provide error message for invalid value
         document.getElementById("powerNeeded").innerHTML = "Please put a positive integer or leave custom component blank"
